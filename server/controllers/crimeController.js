@@ -10,19 +10,18 @@ export const createCrimeReport = async (req, res) => {
       return res.json({ success: false, message: "All fields are required" });
     }
 
-    //  File validation
-    if (!req.files || req.files.length === 0) {
-      return res.json({ success: false, message: "At least one evidence file is required" });
-    }
+    //  File validation (removed explicit check for evidence files)
 
     //  Upload each file to Cloudinary
     const uploadedFiles = [];
-    for (const file of req.files) {
-      const result = await cloudinary.uploader.upload(file.path, {
-        folder: "crime_evidence",
-        resource_type: "auto", // allows images, videos, pdfs, etc.
-      });
-      uploadedFiles.push(result.secure_url);
+    if (req.files && req.files.length > 0) {
+      for (const file of req.files) {
+        const result = await cloudinary.uploader.upload(file.path, {
+          folder: "crime_evidence",
+          resource_type: "auto", // allows images, videos, pdfs, etc.
+        });
+        uploadedFiles.push(result.secure_url);
+      }
     }
 
     // Handle anonymous reports

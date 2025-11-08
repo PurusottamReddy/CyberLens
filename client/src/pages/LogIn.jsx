@@ -1,5 +1,8 @@
 import { useState, useContext } from "react";
 import { UserContext } from "../context/AppContext.jsx";
+import {Link} from "react-router-dom"
+
+
 
 const LogIn = () => {
     const { setUser, axios, toast, navigate } = useContext(UserContext);
@@ -107,13 +110,14 @@ const LogIn = () => {
                         LOGIN
                     </button>
                 </form>
-
-                <p 
-                    onClick={()=>navigate("/signup")} 
-                    className="mt-6 text-center font-semibold text-cyan-400 hover:text-purple-400 cursor-pointer transition-colors hover:underline"
-                >
-                    Don't have an account? Register
-                </p>
+                <div className="mt-4 text-center">
+                    <p className="text-cyan-200 text-sm">
+                        Don't have an account?{' '}
+                        <Link to="/signup" className="text-cyan-400 font-medium hover:underline">
+                            Register
+                        </Link>
+                    </p>
+                </div>
             </div>
         </div>
     );

@@ -19,7 +19,7 @@ await connectDB();
 await connectCloudinary();
 
 
-const allowedOrigins = ['http://localhost:5173', 'http://localhost:5000', process.env.FRONTEND_URL]
+const allowedOrigins = [ 'http://localhost:3000', process.env.FRONTEND_URL]
 
 app.use(express.json());
 app.use(cookieParser());

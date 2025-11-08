@@ -116,20 +116,17 @@ const Home = () => {
           </div>
 
           {/* Main Title & Subtitle */}
-          <div className="text-center mb-16 max-w-4xl mx-auto animate-slide-up">
+          <div className="text-center mb-5 max-w-4xl mx-auto animate-slide-up">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
               Empowering Citizens Against{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">
                 Cybercrime
               </span>
             </h2>
-            <p className="text-xl sm:text-2xl text-cyan-200 font-light tracking-wide">
-              Report, Track, and Protect — with CyberLens
-            </p>
           </div>
 
           {/* 3D Shield Animation */}
-          <div className="mb-16 animate-float">
+          <div className="mb-10 animate-float">
             <div className="relative w-32 h-32 mx-auto">
               <div className="absolute inset-0 border-4 border-cyan-400 rounded-full animate-spin-slow" style={{ animationDuration: '8s' }} />
               <div className="absolute inset-4 border-4 border-purple-400 rounded-full animate-spin-slow" style={{ animationDuration: '12s', animationDirection: 'reverse' }} />

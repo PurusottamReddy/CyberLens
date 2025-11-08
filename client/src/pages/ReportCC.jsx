@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { UserContext } from '../context/AppContext';
+import { useNavigate } from 'react-router-dom';
 
 const ReportCC = () => {
   const { user, axios, toast, navigate } = useContext(UserContext);
@@ -48,6 +49,13 @@ const ReportCC = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!user) {
+      toast.error('Please login to report a crime');
+      navigate('/login');
+      return;
+    }
+
     setLoading(true);
 
     const data = new FormData();

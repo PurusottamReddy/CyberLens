@@ -25,7 +25,7 @@ function App() {
         <Route path='/report/:id'  exact element={<Report/>} />
         <Route path="/look-up" exact element={<LookUp/>}/>
       </Routes>
-   {/* <Footer/>  */}
+   <Footer/> 
 
    </div>
   )

@@ -1,6 +1,9 @@
 import {useState} from "react"
 import {useContext} from "react"
 import {UserContext} from "../context/AppContext"
+import {Link} from "react-router-dom"
+
+
 
 const SignUp = () => {
     const {setUser,axios,toast,navigate}=useContext(UserContext)
@@ -23,10 +26,10 @@ const SignUp = () => {
                 navigate('/')
             }
             else{
-                toast.error(data.message)
+                toast.error(data.message || "User registration failed")
             }
         }catch(errr){
-            toast.error(errr.message || "Something went wrong")
+            toast.error(errr.response?.data?.message || errr.message || "Something went wrong")
         }
     }
 
@@ -112,7 +115,16 @@ const SignUp = () => {
                         SIGNUP
                     </button>
                 </form>
+                <div className="mt-4 text-center">
+                    <p className="text-cyan-200 text-sm">
+                        Already have an account?{' '}
+                        <Link to="/login" className="text-cyan-400 font-medium hover:underline">
+                            Log in
+                        </Link>
+                    </p>
+                </div>
             </div>
+    
         </div>
     )
 }
