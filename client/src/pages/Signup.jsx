@@ -24,6 +24,7 @@ const SignUp = () => {
                 setUser(data.user)
                 toast.success(data.message || "User registered successfully")
                 navigate('/')
+                window.scrollTo(0, 0); // Scroll to top after redirection
             }
             else{
                 toast.error(data.message || "User registration failed")
