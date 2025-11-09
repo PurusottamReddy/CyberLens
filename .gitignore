@@ -26,3 +26,4 @@ dist/
 
 # Uploads directory (if applicable)
 server/uploads/
+/uploads
