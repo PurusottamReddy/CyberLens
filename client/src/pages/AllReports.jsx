@@ -110,48 +110,51 @@ const AllReports = () => {
           </span>
         </h1>
 
-        <div className="flex justify-center gap-4 mb-8">
-          <button
-            onClick={() => handleFilterChange('all')}
-            className={`px-6 py-2 rounded-full text-lg font-medium transition-all duration-300 ${
-              filter === 'all'
-                ? 'bg-cyan-500 text-white shadow-lg'
-                : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
-            }`}
-          >
-            All
-          </button>
-          <button
-            onClick={() => handleFilterChange('Pending')}
-            className={`px-6 py-2 rounded-full text-lg font-medium transition-all duration-300 ${
-              filter === 'Pending'
-                ? 'bg-yellow-500 text-white shadow-lg'
-                : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
-            }`}
-          >
-            Pending
-          </button>
-          <button
-            onClick={() => handleFilterChange('Investigating')}
-            className={`px-6 py-2 rounded-full text-lg font-medium transition-all duration-300 ${
-              filter === 'Investigating'
-                ? 'bg-blue-500 text-white shadow-lg'
-                : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
-            }`}
-          >
-            Investigating
-          </button>
-          <button
-            onClick={() => handleFilterChange('Resolved')}
-            className={`px-6 py-2 rounded-full text-lg font-medium transition-all duration-300 ${
-              filter === 'Resolved'
-                ? 'bg-green-500 text-white shadow-lg'
-                : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
-            }`}
-          >
-            Resolved
-          </button>
-        </div>
+        <div className="flex flex-wrap justify-center gap-4 mb-8">
+  <button
+    onClick={() => handleFilterChange('all')}
+    className={`px-6 py-2 rounded-full text-base sm:text-lg font-medium transition-all duration-300 ${
+      filter === 'all'
+        ? 'bg-cyan-500 text-white shadow-lg'
+        : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+    }`}
+  >
+    All
+  </button>
+
+  <button
+    onClick={() => handleFilterChange('Pending')}
+    className={`px-6 py-2 rounded-full text-base sm:text-lg font-medium transition-all duration-300 ${
+      filter === 'Pending'
+        ? 'bg-yellow-500 text-white shadow-lg'
+        : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+    }`}
+  >
+    Pending
+  </button>
+
+  <button
+    onClick={() => handleFilterChange('Investigating')}
+    className={`px-6 py-2 rounded-full text-base sm:text-lg font-medium transition-all duration-300 ${
+      filter === 'Investigating'
+        ? 'bg-blue-500 text-white shadow-lg'
+        : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+    }`}
+  >
+    Investigating
+  </button>
+
+  <button
+    onClick={() => handleFilterChange('Resolved')}
+    className={`px-6 py-2 rounded-full text-base sm:text-lg font-medium transition-all duration-300 ${
+      filter === 'Resolved'
+        ? 'bg-green-500 text-white shadow-lg'
+        : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+    }`}
+  >
+    Resolved
+  </button>
+</div>
 
         {reports.length === 0 ? (
           <div className="text-center text-cyan-300 text-xl py-20">
